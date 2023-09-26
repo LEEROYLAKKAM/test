@@ -1,0 +1,102 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance registration</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			document.getElementById("username").textContent = localStorage.getItem("textvalue");
+			document.getElementById("custID").textContent = localStorage.getItem("IDValue");
+
+	});
+		function logout(event) {
+		  // localStorage.clear();
+		  window.location.href = "login.html";
+		}
+
+		  function setvalues(event)
+		  {
+
+			  	var dp1=document.getElementById("dp1");
+			  	
+			  	var dp2=document.getElementById("dp2");
+
+			  	var txt=document.getElementById("txt");
+			  	var txt2=document.getElementById("txt_2");
+			  	var txt3=document.getElementById("txt_3");
+
+
+			  	if (dp1.selectedIndex==0 || dp2.selectedIndex==0)
+			  	{
+			  		alert("Please choose the options ");
+			  		return false;
+			  	}
+			  	
+			  	else
+			  	{
+			  		txt.value =Math.floor(Math.random()*(1000-500+1)+500)*10;
+			  		txt2.value =Math.floor(Math.random()*(1000-600+1)+600)*10;
+			  		txt3.value =Math.floor(Math.random()*(15-1+1)+1);
+			  		var txt4=dp1.options[dp1.selectedIndex];
+			  		var txt5=dp2.options[dp2.selectedIndex];
+			  		var v1=txt.value ;
+			  		var v2=txt2.value ;
+			  		var v3=txt3.value ;
+			  	}
+			  	localStorage.setItem("1",v1);
+		  		localStorage.setItem("2",v2);
+		  		localStorage.setItem("3",v3);
+		  		localStorage.setItem("00",txt4.text);
+		  		localStorage.setItem("01",txt5.text);
+
+		  }
+
+	</script>
+
+	
+	
+</head>
+<body>
+	
+<center>
+	
+	<img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png" id="image">
+	<h3><em>Customer name : <span id="username"> </span> Customer id:<span id="custID"></span></em><br>
+	<input type="submit" value="Logout" class="button2" onclick="logout();"></em></h3>
+	<hr><br>
+	<div id="div">
+		<h1>Choose your policy</h1>
+		<br><br>
+		<label> Policy Type </label> 
+		<select name="policy" id="dp1">
+		  <option value="Choose">Choose Policy</option>
+		  <option value="volvo">BIMA</option>
+		  <option value="saab">Child Care</option>
+		  <option value="mercedes">Study Policy</option>
+		  <option value="audi">Life Insurance</option>
+		</select><br><br>
+		<label> Policy Title </label>
+		<select name="policy2" id="dp2"> 
+		  <option value="Choose">Choose Policy</option>
+		  <option value="volvo">Std Ins.</option>
+		  <option value="saab">Policy2</option>
+		  <option value="mercedes">Policy 3</option>
+		  <option value="audi">Policy 4</option>
+		</select><br><br>
+		
+
+		<label> Sum assured </label> 
+		<input type="text" id="txt" readonly=""><br><br>
+		<label> Premium amount(rs) </label> 
+		<input type="text" readonly="" id="txt_2" class=""><br><br>
+		<label> Policy Term </label>
+		<input type="text" readonly id="txt_3"><br><br>
+		<input type="submit" value="Get price"  class="button" onclick="setvalues();" >
+
+		<input type="submit" value="Confirm" class="button" onclick="window.location.href='reg_success.html'">
+		<input type="submit" value="View Policy" class="button" onclick="window.location.href='viewport1.html'">
+	</div>
+		
+</center> 
+</body> 
+</html> 

@@ -1,0 +1,59 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance registration</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		function passvalues(){
+			var custID=Math.floor(Math.random.randInt(100000,500000);
+			var fname=document.getElementById("name").value;
+			var fname2=document.getElementById("email").value;
+			localStorage.setItem("CustValue",custID);
+			localStorage.setItem("textvalue",fname);
+			localStorage.setItem("textvalue2",fname2);
+			return false;
+		}
+	</script>
+</head>
+<body>
+	
+<center>
+	
+	<img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png" id="image">
+	<h3><em>Contact details: 999999999<br>
+	Address: Hyderabad</em></h3>
+	<hr>
+	<br>
+	<div id="div">
+		<h1> REGISTER</h1><br>
+	<form action="success.html" method="POST" onsubmit="passvalues();">
+		<label>Name<span style="color:red">*</span></label> <input type="text" id="name" name="name" required="" /><br><br>
+		<label>Email<span style="color:red">*</span></label><input type="email" id="email" name="email" required="" /><br><br>
+		<!-- <img src=https://cdn-icons-png.flaticon.com/512/6803/6803345.png id="photo" width=25px height=25px  onclick="myFunction()">
+		<label>Set Password<span style="color:red">*</span></label> <input type="password" id="myInput" name="password" minlength="8" required=""><br><br>
+
+		<label>Address<span style="color:red">*</span></label> <input type="text" required><br><br>
+		<label>Contact<span style="color:red">*</span></label> <input type="number" required><br><br>
+		
+		
+		<label>Nominee name<span style="color:red">*</span></label> <input type="text" required><br><br><br>
+		<label>Relationship<span style="color:red">*</span></label> <input type="text" required><br><br><br> -->
+		<!-- <button onclick="passValue()">Submit</button> -->
+		<input type="submit"  value="Submit" class="button" onclick="passvalues()"/>
+		<input type="reset" value="Reset" class="button">
+	</form>
+	</div>
+<script>
+function myFunction() {
+  var x = document.getElementById("myInput");
+  if (x.type === "password") {
+    x.type = "text";
+  } else {
+    x.type = "password";
+  }
+}
+</script>
+ 
+</center>
+</body>
+</html>

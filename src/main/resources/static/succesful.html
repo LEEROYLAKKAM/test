@@ -1,0 +1,53 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance registration</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			document.getElementById("ID-res").textContent=localStorage.getItem("IDValue").toString();
+			document.getElementById("name-res").textContent = localStorage.getItem("textvalue");
+			document.getElementById("email-res").textContent = localStorage.getItem("textvalue2");
+			document.getElementById("password").textContent = localStorage.getItem("password");
+		});
+	</script>
+</head>
+<body>
+	
+<center>
+	
+	<img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png" id="image">
+	<h3><em>Contact details: 9999999999<br>
+	Address: Hyderabad</em></h3>
+	<hr>
+	<div id="div">
+		<h1> Customer Registration Details </h1><br>
+		<form name="myform" action="login.html" method="GET">
+		<p>Customer Registration succesful!</p>
+		<br>
+		<div id="txt2">
+		Customer-ID :<span id="ID-res" class="txt"></span><br><br>
+		Name : <span id="name-res" class="txt"></span><br><br>
+		Email :<span id="email-res" class="txt"></span><br><br>
+	</div>
+
+		<input type="submit" value="Login" class="button" onclick="passvalues();">
+		<input type="submit" value="Register" class="button" onsubmit= "window.location.href='reg.html'">
+		</form>
+
+		<!-- <input type="submit" value="Register" class="button" onclick="window.location.href='reg.html'"> -->
+	<script>
+		function passvalues(){
+			var custID= localStorage.getItem("IDValue");
+			var password=localStorage.getItem("password");
+			localStorage.setItem("IDValue",custID);
+			localStorage.setItem("password",password);
+			return ;
+		}
+	</script>
+	    
+</div>
+</center>
+
+</body>
+</html>

@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function passvalues(event) {
+            var custID = localStorage.getItem("IDValue");
+            var password = localStorage.getItem("password");
+
+            var cs = document.getElementById("name").value;
+            var pwd = document.getElementById("password").value;
+            
+            if (cs !== custID) {
+                alert("Customer ID not Found");
+                return;
+            } else if (cs === custID && pwd !== password) {
+                alert("Customer ID or Password do not match!");
+                return;
+            } else {
+                // Redirect to the home page on successful login
+                window.location.assign("home.html");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png"
+            id="image">
+        <h3><em>Contact details: 9999999999<br> Address: Hyderabad</em></h3>
+        <hr>
+        <div id="div">
+            <h1>CUSTOMER LOGIN</h1><br>
+            <form method="POST" onsubmit="passvalues(event);">
+                <label>Customer ID <span style="color:red">*</span></label> <input type="text" id="name" name="name"
+                    required /><br><br>
+                <label>Password <span style="color:red">*</span></label><input type="password" id="password"
+                    name="password" required /><br><br>
+                <input type="submit" value="Login" class="button" />
+                <input type="reset" value="Reset" class="button">
+                <input type="button" value="Register" class="button" onclick="window.location.href='reg.html'">
+            </form>
+        </div>
+    </center>
+</body>
+
+</html>

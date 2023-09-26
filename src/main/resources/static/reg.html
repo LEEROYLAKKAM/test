@@ -1,0 +1,73 @@
+<!DOCTYPE html>
+<html>
+
+<head>
+    <meta charset="UTF-8">
+    <title>Insurance Registration</title>
+    <link rel="stylesheet" href="styles.css">
+    <script>
+        function passvalues(event) {
+            event.preventDefault();
+            var passwordRegex = /^(?=.*[a-z])(?=.*[A-Z])(?=.*\d).{8,}$/;
+
+            var custID = "S" + Math.floor(Math.random() * 10000000 + 5000);
+            var fname = document.getElementById("name").value;
+            var fname2 = document.getElementById("email").value;
+            var password = document.getElementById("myInput").value;
+            var string_pwd = password.toString();
+            
+            if (password.match(passwordRegex)) {
+                localStorage.setItem("IDValue", custID);
+                localStorage.setItem("textvalue", fname);
+                localStorage.setItem("textvalue2", fname2);
+                localStorage.setItem("password", string_pwd);
+                window.location.href = "successful.html";
+            } else {
+                alert("Please follow Password Policy");
+            }
+        }
+    </script>
+</head>
+
+<body>
+    <center>
+        <img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png"
+            id="image">
+        <h3><em>Contact details: 9999999999<br>
+                Address: Hyderabad</em></h3>
+        <hr>
+        <br>
+        <div id="div">
+            <h1>REGISTER</h1><br>
+            <form method="POST" onsubmit="passvalues(event);">
+                <label>Name<span style="color:red">*</span></label> <input type="text" id="name" name="name" required=""
+                    maxlength="50" /><br><br>
+                <label>Email<span style="color:red">*</span></label><input type="email" id="email" name="email"
+                    required="" /><br><br>
+                <label>Set Password<span style="color:red">*</span></label> <input type="password" id="myInput"
+                    name="password" minlength="8" maxlength="30" required=""><br><br>
+                <label>Address</label> <textarea id="address" rows="3" required></textarea><br><br>
+                <label>Contact<span style="color:red">*</span></label> <input type="number" id="mobno" required
+                    maxlength="10"><br><br>
+                <label>Nominee name<span style="color:red">*</span></label> <input type="text" required maxlength="50"><br><br><br>
+                <label>Relationship<span style="color:red">*</span></label> <input type="text" required><br><br><br>
+                <input type="submit" value="Submit" class="button" />
+                <input type="reset" value="Reset" class="button">
+                <input type="checkbox" onclick="myFunction()"> Show Password
+                <p><a href="passwordpolicy.html">Password Policy</a></p>
+            </form>
+        </div>
+        <script>
+            function myFunction() {
+                var x = document.getElementById("myInput");
+                if (x.type === "password") {
+                    x.type = "text";
+                } else {
+                    x.type = "password";
+                }
+            }
+        </script>
+    </center>
+</body>
+
+</html>

@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance registration</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			document.getElementById("uname").textContent = localStorage.getItem("textvalue");
+			document.getElementById("uname2").textContent = localStorage.getItem("textvalue");
+			document.getElementById("custID").textContent = localStorage.getItem("IDValue");
+		});
+	function logout(event) {
+	  // Clear any session or user-related data
+	  // For example, you can use localStorage.clear() to clear all data stored in localStorage
+	  localStorage.clear();
+
+	  // Redirect the user to the login page or any desired destination
+	  window.location.href = "login.html";
+	}
+	</script>
+	
+</head>
+<body>
+	
+<center>
+	
+	<img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png" id="image">
+	<h3><em>Customer name : <span id="uname"> </span> Customer id:<span id="custID"></span></em><br>
+	<input type="submit" value="Logout" class="button2" onclick="logout();"></em></h3>
+	<hr>
+	<br>
+	Welcome <span id="uname2"></span>,<br><br>
+		
+		<div class="container">
+		<h2>RELIABLE INSURANCE <br> FOR YOUR <br> FAMILY </h2>
+		<br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br>
+	
+	</div>
+	<h4>It's our ambition to keep your life secured</h4>
+	<div class="b3">
+		<input type="submit" value="View Policy" class="button3" onclick= " window.location.href='viewport1.html'">
+		<input type="submit" value="Register Policy" class="button3" onclick="window.location.href='registerpolicy.html'">
+	</div>
+
+</center>
+<img src="https://freepngimg.com/save/141225-vector-family-happy-free-download-png-hq/2618x2296" align="right" class="family">	
+</body>
+</html>

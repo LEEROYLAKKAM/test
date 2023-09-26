@@ -1,0 +1,51 @@
+<!DOCTYPE html>
+<html>
+<head>
+	<title>Insurance registration</title>
+	<link rel="stylesheet" href="styles.css">
+	<script>
+		window.addEventListener('DOMContentLoaded', function() {
+			document.getElementById("username").textContent = localStorage.getItem("textvalue");
+			document.getElementById("custID").textContent = localStorage.getItem("IDValue");
+
+			document.getElementById("v_1").textContent = localStorage.getItem("1");
+			document.getElementById("v_2").textContent = localStorage.getItem("2");
+			document.getElementById("v_3").textContent = localStorage.getItem("3");
+			document.getElementById("v_4").textContent = localStorage.getItem("00");
+			document.getElementById("v_5").textContent = localStorage.getItem("01");
+
+		});
+	function logout(event) {
+	  // localStorage.clear();
+	  window.location.href = "login.html";
+	}
+	</script>
+	
+</head>
+<body>
+	
+<center>
+	
+	<img src="https://5.imimg.com/data5/SELLER/Default/2021/6/XU/OM/YX/30080076/lic-logo-png-500x500.png" id="image">
+	<h3><em>Customer name : <span id="username"> </span> Customer id:<span id="custID"></span></em><br>
+	<input type="submit" value="Logout" class="button2" onclick="logout();"></em></h3>
+	<hr><br>
+	
+	<div id="div">
+		<h1>Customer Policy Details</h1>
+		<br>
+		<p>Your Policy Has been Registered Successfully!</p>
+		<br><br>
+	<div id="txt2">
+
+		<label>Policy type</label> :   <span id="v_4"></span><br><br>
+		<label>Policy name</label> :   <span id="v_5"></span><br><br>
+		<label>Sum assured</label>:    <span id="v_1"></span><br><br>
+		<label>Premium amount</label> : <span id="v_2"></span><br><br>
+		<label>Policy term </label> :   <span id="v_3"></span>yrs<br><br>
+		<input type="submit" class="button" value="Register another" onclick="window.location.href='registerpolicy.html'">
+		<input type="submit" class="button" value="Home" onclick="window.location.href='home.html'">
+		
+	</div>
+</div>
+</h3></center></body></html>

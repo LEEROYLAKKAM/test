@@ -1,0 +1,5 @@
+com\project\leeroy\insureme\PolicyRepository.class
+com\project\leeroy\insureme\Policy.class
+com\project\leeroy\insureme\PolicyService.class
+com\project\leeroy\insureme\PolicyController.class
+com\project\leeroy\insureme\InsureMeApplication.class
